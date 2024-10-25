@@ -31,7 +31,7 @@
       ansible_facts['distribution_major_version'] == "9"
 
 - name: YUM-Based | Install rke2-server
-  ansible.builtin.yum:
+  ansible.builtin.dnf:
     name: "rke2-server-{{ rke2_version_rpm }}"
     state: latest  # noqa package-latest
   when:
@@ -44,7 +44,7 @@
   delay: 30
 
 - name: YUM-Based | Install rke2-agent
-  ansible.builtin.yum:
+  ansible.builtin.dnf:
     name: "rke2-agent-{{ rke2_version_rpm }}"
     state: latest  # noqa package-latest
   when:

@@ -14,7 +14,7 @@
     var: command_output.stdout_lines
   tags:
     - troubleshooting
-  ignore_errors: true
+  ignore_errors: true  # noqa: ignore-errors
 
 - name: Show journalctl -ue rke2-server
   ansible.builtin.command: >-
@@ -30,7 +30,7 @@
     var: command_output.stdout_lines
   tags:
     - troubleshooting
-  ignore_errors: true
+  ignore_errors: true  # noqa: ignore-errors
 
 - name: Show rke2 config file
   ansible.builtin.command: >-
@@ -46,4 +46,4 @@
     var: command_output.stdout_lines
   tags:
     - troubleshooting
-  ignore_errors: true
+  ignore_errors: true  # noqa: ignore-errors
